@@ -1,0 +1,130 @@
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "bec": "TEST001",
+  "name": "Test Student",
+  "department": "Computer Science",
+  "password": "TestPassword123",
+  "role": "student"
+}
+
+###
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "bec": "TEST001",
+  "password": "TestPassword123"
+}
+
+
+###
+
+POST http://localhost:5000/activities
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiYmVjIjoiVEVTVDAwMSIsIm5hbWUiOiJUZXN0IFN0dWRlbnQiLCJkZXBhcnRtZW50IjoiQ29tcHV0ZXIgU2NpZW5jZSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzg5NzQ4NjMxLCJleHAiOjE3ODk3Nzc0MzF9.yO1Mjz6YEPNDxP9Yu6HIJhWWUSZ7e1JbqcRwCTjGj8c
+Content-Type: application/json
+
+{
+  "bec": "SHOULD_BE_IGNORED",
+  "category": "hackathon",
+  "title": "College Hackathon",
+  "organizer": "Connected Campus",
+  "activity_date": "2026-09-18",
+  "description": "Participated in a college hackathon.",
+  "proof_url": "https://example.com/proof"
+}
+
+###
+
+GET http://localhost:5000/activities/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiYmVjIjoiVEVTVDAwMSIsIm5hbWUiOiJUZXN0IFN0dWRlbnQiLCJkZXBhcnRtZW50IjoiQ29tcHV0ZXIgU2NpZW5jZSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzg5NzQ4ODgxLCJleHAiOjE3ODk3Nzc2ODF9.dOqjsToNM-87FzMrn1JdY9tU_dAOxQUFo6f_Gfmfwyw
+
+
+###
+
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "bec": "TEST002",
+  "name": "Test Teacher",
+  "department": "Computer Science",
+  "password": "TeacherPassword123",
+  "role": "teacher"
+}
+
+###
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "bec": "TEST002",
+  "password": "TeacherPassword123"
+}
+
+###
+
+GET http://localhost:5000/activities/pending
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiYmVjIjoiVEVTVDAwMiIsIm5hbWUiOiJUZXN0IFRlYWNoZXIiLCJkZXBhcnRtZW50IjoiQ29tcHV0ZXIgU2NpZW5jZSIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNzg5NzQ5MzYyLCJleHAiOjE3ODk3NzgxNjJ9.zDhGcMlGDeZ4bNpFGUNp1bCx92490OLQOOtUbNdIFO8
+
+
+###
+
+POST http://localhost:5000/activities/2/verify
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiYmVjIjoiVEVTVDAwMiIsIm5hbWUiOiJUZXN0IFRlYWNoZXIiLCJkZXBhcnRtZW50IjoiQ29tcHV0ZXIgU2NpZW5jZSIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNzg5NzQ5NTM3LCJleHAiOjE3ODk3NzgzMzd9.GoIZpAPdXoABfdmBTT8xEEzPssMA5Kdf2CBWM908LJw
+Content-Type: application/json
+
+{
+  "decision": "verified"
+}
+
+###
+
+GET http://localhost:5000/activities/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiYmVjIjoiVEVTVDAwMSIsIm5hbWUiOiJUZXN0IFN0dWRlbnQiLCJkZXBhcnRtZW50IjoiQ29tcHV0ZXIgU2NpZW5jZSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzg5NzQ5NTk3LCJleHAiOjE3ODk3NzgzOTd9._ered7_K2ZaC1DnuR8wVzTARfZux2XwRLFOleE9gdqQ
+
+###
+
+POST http://localhost:5000/activities/1/verify
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiYmVjIjoiVEVTVDAwMiIsIm5hbWUiOiJUZXN0IFRlYWNoZXIiLCJkZXBhcnRtZW50IjoiQ29tcHV0ZXIgU2NpZW5jZSIsInJvbGUiOiJ0ZWFjaGVyIiwiaWF0IjoxNzg5NzQ5ODA3LCJleHAiOjE3ODk3Nzg2MDd9.9KTtT83nGYO3PG2r2lbHCvMEpRogpsdY9mgQtY2dAW0
+Content-Type: application/json
+
+{
+  "decision": "rejected",
+  "rejection_reason": "Proof document is not clear"
+
+
+}
+
+
+###
+
+GET http://localhost:5000/activities/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiYmVjIjoiVEVTVDAwMSIsIm5hbWUiOiJUZXN0IFN0dWRlbnQiLCJkZXBhcnRtZW50IjoiQ29tcHV0ZXIgU2NpZW5jZSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzg5NzQ5NTk3LCJleHAiOjE3ODk3NzgzOTd9._ered7_K2ZaC1DnuR8wVzTARfZux2XwRLFOleE9gdqQ
+
+
+###
+
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "bec": "TEST003",
+  "name": "Test PO",
+  "department": "Placement Cell",
+  "password": "POPassword123",
+  "role": "po"
+}
+
+###
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "bec": "TEST003",
+  "password": "POPassword123"
+}

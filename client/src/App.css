@@ -1,0 +1,1714 @@
+/* =========================================
+   TOWARDS CONNECTED CAMPUS
+   Editorial Academic Theme
+   Inspired by the supplied reference design
+   Font: Montserrat
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* =========================================
+   COLOR PALETTE
+========================================= */
+
+:root {
+  --rose: #ead4d4;
+  --rose-light: #f3e3e3;
+  --rose-dark: #d8b7b7;
+
+  --cream: #fffdf9;
+  --cream-soft: #faf7f2;
+
+  --taupe: #b58a70;
+  --taupe-dark: #966d55;
+
+  --charcoal: #292929;
+  --charcoal-soft: #4a4a4a;
+
+  --sage: #7a927f;
+  --sage-dark: #617966;
+
+  --border: #dfc8c0;
+
+  --error-bg: #f8e1dd;
+  --error-text: #a33f32;
+}
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  color: var(--charcoal);
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(181, 138, 112, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(122, 146, 127, 0.10),
+      transparent 30%
+    ),
+    var(--rose);
+}
+
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-page {
+  width: min(450px, calc(100% - 32px));
+
+  margin: 70px auto;
+
+  padding: 42px;
+
+  text-align: center;
+
+  background: var(--cream);
+
+  border: 1px solid var(--border);
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 18px 45px rgba(68, 48, 40, 0.14),
+    0 4px 12px rgba(68, 48, 40, 0.06);
+}
+
+/* =========================================
+   MAIN TITLE
+========================================= */
+
+.login-page h1 {
+  margin: 0 0 14px;
+
+  color: var(--charcoal);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 29px;
+
+  font-weight: 800;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.035em;
+}
+
+/* =========================================
+   LOGIN HEADING
+========================================= */
+
+.login-page h2 {
+  margin: 0 0 30px;
+
+  color: var(--taupe-dark);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   REFERENCE-STYLE DIVIDER
+========================================= */
+
+.login-page h2::after {
+  content: '';
+
+  display: block;
+
+  width: 100%;
+
+  height: 3px;
+
+  margin: 15px auto 0;
+
+  background: var(--rose-light);
+}
+
+/* =========================================
+   LOGIN FORM
+========================================= */
+
+.login-page form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 19px;
+
+  text-align: left;
+}
+
+.login-page form > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+/* =========================================
+   LABELS
+========================================= */
+
+.login-page label {
+  color: var(--charcoal);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.login-page input {
+  width: 100%;
+
+  padding: 14px 15px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 2px;
+
+  background: var(--cream-soft);
+
+  color: var(--charcoal);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-page input::placeholder {
+  color: #a49a94;
+
+  font-weight: 400;
+}
+
+.login-page input:hover {
+  border-color: var(--taupe);
+}
+
+.login-page input:focus {
+  background: #ffffff;
+
+  border-color: var(--taupe);
+
+  box-shadow:
+    0 0 0 3px rgba(181, 138, 112, 0.12);
+}
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-page button {
+  width: 100%;
+
+  margin-top: 8px;
+
+  padding: 14px 18px;
+
+  border: none;
+
+  border-radius: 2px;
+
+  background: var(--charcoal);
+
+  color: #ffffff;
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 16px rgba(41, 41, 41, 0.15);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-page button:hover {
+  transform: translateY(-2px);
+
+  background: var(--taupe-dark);
+
+  box-shadow:
+    0 10px 22px rgba(41, 41, 41, 0.20);
+}
+
+.login-page button:active {
+  transform: translateY(0);
+}
+
+.login-page button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.55;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.error-message {
+  margin-top: 18px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #e5bcb4;
+
+  border-radius: 2px;
+
+  background: var(--error-bg);
+
+  color: var(--error-text);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   GENERAL BUTTONS
+========================================= */
+
+button {
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* =========================================
+   OPTIONAL CARD STYLES
+   Useful for Dashboard / Activity Tracker
+========================================= */
+
+.card {
+  background: var(--cream);
+
+  border: 1px solid var(--border);
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 8px 25px rgba(68, 48, 40, 0.08);
+}
+
+.card-title {
+  color: var(--charcoal);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+.card-subtitle {
+  color: var(--taupe-dark);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   STATUS STYLES
+========================================= */
+
+.status-verified {
+  color: var(--sage-dark);
+
+  background: #e7efe8;
+}
+
+.status-pending {
+  color: #9a6a24;
+
+  background: #f6ead3;
+}
+
+.status-rejected {
+  color: var(--error-text);
+
+  background: var(--error-bg);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .login-page {
+    width: calc(100% - 24px);
+
+    margin: 30px auto;
+
+    padding: 30px 20px;
+
+    border-radius: 3px;
+  }
+
+  .login-page h1 {
+    font-size: 24px;
+  }
+
+  .login-page h2 {
+    font-size: 16px;
+
+    letter-spacing: 0.12em;
+  }
+}
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard {
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+
+  padding: 24px 6%;
+
+  background: rgba(255, 253, 249, 0.96);
+
+  border-bottom: 1px solid var(--border);
+
+  box-shadow: 0 4px 18px rgba(68, 48, 40, 0.06);
+}
+
+.dashboard-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--charcoal);
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+
+  color: var(--charcoal);
+
+  font-size: 20px;
+  font-weight: 800;
+
+  letter-spacing: -0.03em;
+}
+
+.dashboard-welcome {
+  margin: 5px 0 0;
+
+  color: var(--taupe-dark);
+
+  font-size: 12px;
+}
+
+.dashboard-user-info {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.user-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.user-detail span {
+  color: #9b9189;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.user-detail strong {
+  color: var(--charcoal);
+
+  font-size: 12px;
+}
+
+.role-badge {
+  color: var(--sage-dark) !important;
+
+  text-transform: capitalize;
+}
+
+.logout-button {
+  padding: 10px 18px;
+
+  border: 1px solid var(--charcoal);
+  border-radius: 2px;
+
+  background: transparent;
+
+  color: var(--charcoal);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.logout-button:hover {
+  background: var(--charcoal);
+
+  color: #ffffff;
+}
+
+/* =========================================
+   DASHBOARD CONTENT
+========================================= */
+
+.dashboard-content {
+  width: min(1000px, calc(100% - 32px));
+
+  margin: 0 auto;
+
+  padding: 55px 0 80px;
+}
+
+.dashboard-heading {
+  margin-bottom: 32px;
+}
+
+.section-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--taupe-dark);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+}
+
+.dashboard-heading h2 {
+  margin: 0;
+
+  color: var(--charcoal);
+
+  font-size: 34px;
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+}
+
+.dashboard-heading p {
+  margin: 9px 0 0;
+
+  color: var(--charcoal-soft);
+
+  font-size: 13px;
+}
+
+/* =========================================
+   DASHBOARD CARDS
+========================================= */
+
+.dashboard-card {
+  margin-bottom: 20px;
+
+  padding: 28px;
+
+  background: var(--cream);
+
+  border: 1px solid var(--border);
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 8px 25px rgba(68, 48, 40, 0.07);
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+.card-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--rose-light);
+
+  color: var(--taupe-dark);
+
+  font-size: 17px;
+}
+
+.card-label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: var(--taupe-dark);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.dashboard-card h3 {
+  margin: 0;
+
+  color: var(--charcoal);
+
+  font-size: 18px;
+  font-weight: 700;
+
+  letter-spacing: -0.025em;
+}
+
+.dashboard-card p {
+  color: var(--charcoal-soft);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 1px;
+
+  background: var(--border);
+}
+
+.profile-item {
+  padding: 18px;
+
+  background: var(--cream);
+}
+
+.profile-item span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #9b9189;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.profile-item strong {
+  color: var(--charcoal);
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+}
+
+.stat-box {
+  padding: 20px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 2px;
+}
+
+.stat-box span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stat-box strong {
+  display: block;
+
+  font-size: 30px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+.stat-box small {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 10px;
+}
+
+.stat-total {
+  background: var(--rose-light);
+}
+
+.stat-total span {
+  color: var(--taupe-dark);
+}
+
+.stat-pending {
+  background: #f7ecd9;
+}
+
+.stat-pending span {
+  color: #9a6a24;
+}
+
+.stat-verified {
+  background: #e7efe8;
+}
+
+.stat-verified span {
+  color: var(--sage-dark);
+}
+
+.stat-rejected {
+  background: #f8e1dd;
+}
+
+.stat-rejected span {
+  color: var(--error-text);
+}
+
+/* =========================================
+   ACTION BUTTON
+========================================= */
+
+.primary-action {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  min-width: 230px;
+
+  margin-top: 10px;
+
+  padding: 13px 17px;
+
+  border: none;
+  border-radius: 2px;
+
+  background: var(--charcoal);
+
+  color: #ffffff;
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.primary-action span {
+  margin-left: 20px;
+
+  font-size: 16px;
+}
+
+.primary-action:hover {
+  transform: translateY(-2px);
+
+  background: var(--taupe-dark);
+}
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.activity-page {
+  width: min(1000px, calc(100% - 32px));
+
+  margin: 0 auto;
+
+  padding: 35px 0 70px;
+}
+
+.back-button {
+  margin-bottom: 25px;
+
+  padding: 10px 15px;
+
+  border: 1px solid var(--border);
+  border-radius: 2px;
+
+  background: var(--cream);
+
+  color: var(--charcoal);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: var(--rose-light);
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading-message {
+  color: var(--taupe-dark) !important;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   RESPONSIVE DASHBOARD
+========================================= */
+
+@media (max-width: 800px) {
+  .dashboard-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .dashboard-user-info {
+    width: 100%;
+
+    flex-wrap: wrap;
+  }
+
+  .profile-grid,
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .dashboard-header {
+    padding: 20px;
+  }
+
+  .dashboard-content {
+    padding-top: 35px;
+  }
+
+  .dashboard-heading h2 {
+    font-size: 28px;
+  }
+
+  .dashboard-card {
+    padding: 20px;
+  }
+
+  .profile-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-user-info {
+    gap: 14px;
+  }
+
+  .logout-button {
+    width: 100%;
+  }
+
+  .primary-action {
+    width: 100%;
+  }
+}
+/* =========================================
+   ACTIVITY TRACKER
+========================================= */
+
+.activity-tracker {
+  width: 100%;
+}
+
+.activity-tracker h2 {
+  margin: 0 0 8px;
+
+  color: var(--charcoal);
+
+  font-size: 28px;
+  font-weight: 800;
+
+  letter-spacing: -0.035em;
+}
+
+.activity-tracker > p {
+  margin: 0 0 25px;
+
+  color: var(--charcoal-soft);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.activity-form {
+  padding: 28px;
+
+  background: var(--cream);
+
+  border: 1px solid var(--border);
+  border-radius: 3px;
+
+  box-shadow:
+    0 8px 25px rgba(68, 48, 40, 0.07);
+}
+
+.activity-form label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--charcoal);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.activity-form input,
+.activity-form select,
+.activity-form textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 13px;
+
+  border: 1px solid var(--border);
+  border-radius: 2px;
+
+  background: #ffffff;
+
+  color: var(--charcoal);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 12px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.activity-form input:focus,
+.activity-form select:focus,
+.activity-form textarea:focus {
+  border-color: var(--taupe);
+
+  box-shadow:
+    0 0 0 3px rgba(181, 138, 112, 0.12);
+}
+
+.activity-form textarea {
+  min-height: 120px;
+
+  resize: vertical;
+}
+
+.activity-form button {
+  margin-top: 10px;
+
+  padding: 13px 20px;
+
+  border: none;
+  border-radius: 2px;
+
+  background: var(--charcoal);
+
+  color: #ffffff;
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.activity-form button:hover {
+  background: var(--taupe-dark);
+}
+
+.activity-form button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+/* =========================================
+   ACTIVITY TRACKER - FORM LAYOUT
+========================================= */
+
+.activity-tracker {
+  width: 100%;
+}
+
+.activity-tracker > h1 {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.activity-tracker > p {
+  text-align: center;
+}
+
+/* Submit section */
+.activity-tracker section {
+  margin-top: 35px;
+}
+
+.activity-tracker section h2 {
+  margin-bottom: 20px;
+}
+
+/* Form card */
+.activity-tracker form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 22px;
+
+  max-width: 780px;
+  margin: 0 auto;
+
+  padding: 30px;
+
+  background: var(--cream);
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  box-shadow: 0 8px 25px rgba(68, 48, 40, 0.07);
+}
+
+/* Each field */
+.activity-tracker form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* Make description full width */
+.activity-tracker form > div:nth-child(5) {
+  grid-column: 1 / -1;
+}
+
+/* Make proof URL full width */
+.activity-tracker form > div:nth-child(6) {
+  grid-column: 1 / -1;
+}
+
+/* Labels */
+.activity-tracker form label {
+  color: var(--charcoal);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Inputs */
+.activity-tracker form input,
+.activity-tracker form select,
+.activity-tracker form textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 13px;
+
+  border: 1px solid var(--border);
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  color: var(--charcoal);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 12px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.activity-tracker form input:focus,
+.activity-tracker form select:focus,
+.activity-tracker form textarea:focus {
+  border-color: var(--taupe);
+
+  box-shadow:
+    0 0 0 3px rgba(181, 138, 112, 0.12);
+}
+
+.activity-tracker form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* Submit button */
+.activity-tracker form button {
+  grid-column: 1 / -1;
+
+  justify-self: center;
+
+  min-width: 190px;
+
+  margin-top: 5px;
+
+  padding: 13px 22px;
+
+  border: none;
+  border-radius: 3px;
+
+  background: var(--charcoal);
+
+  color: white;
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.activity-tracker form button:hover {
+  background: var(--taupe-dark);
+  transform: translateY(-1px);
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .activity-tracker form {
+    grid-template-columns: 1fr;
+
+    padding: 22px;
+  }
+
+  .activity-tracker form > div:nth-child(5),
+  .activity-tracker form > div:nth-child(6) {
+    grid-column: auto;
+  }
+
+  .activity-tracker form button {
+    grid-column: auto;
+    width: 100%;
+  }
+}
+/* =========================================
+   MY ACTIVITIES
+========================================= */
+
+.activity-tracker section:last-child {
+  margin-top: 40px;
+}
+
+.activity-tracker section:last-child h2 {
+  margin-bottom: 20px;
+}
+
+/* Activity list */
+.activity-tracker section:last-child > div {
+  display: grid;
+  gap: 16px;
+}
+
+/* Individual activity card */
+.activity-tracker article {
+  padding: 24px;
+
+  background: var(--cream);
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  box-shadow:
+    0 6px 20px rgba(68, 48, 40, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.activity-tracker article:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 26px rgba(68, 48, 40, 0.09);
+}
+
+/* Activity title */
+.activity-tracker article h3 {
+  margin: 0 0 16px;
+
+  color: var(--charcoal);
+
+  font-size: 18px;
+  font-weight: 800;
+
+  letter-spacing: -0.025em;
+}
+
+/* Activity details */
+.activity-tracker article p {
+  margin: 8px 0;
+
+  color: var(--charcoal-soft);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+.activity-tracker article p strong {
+  color: var(--charcoal);
+
+  font-weight: 700;
+}
+
+/* Proof link */
+.activity-tracker article a {
+  color: var(--taupe-dark);
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.activity-tracker article a:hover {
+  text-decoration: underline;
+}
+
+/* Status */
+.activity-tracker .status {
+  display: inline-block;
+
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+/* Pending */
+.activity-tracker .status-pending {
+  background: #f7ecd9;
+
+  color: #9a6a24;
+}
+
+/* Verified */
+.activity-tracker .status-verified {
+  background: #e7efe8;
+
+  color: var(--sage-dark);
+}
+
+/* Rejected */
+.activity-tracker .status-rejected {
+  background: #f8e1dd;
+
+  color: var(--error-text);
+}
+
+/* Success message */
+.activity-tracker .success-message {
+  margin: 18px 0;
+
+  padding: 12px 15px;
+
+  border: 1px solid #c9dccd;
+  border-radius: 3px;
+
+  background: #e7efe8;
+
+  color: var(--sage-dark);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Error message */
+.activity-tracker .error-message {
+  margin: 18px 0;
+
+  padding: 12px 15px;
+
+  border-radius: 3px;
+
+  background: var(--error-bg);
+
+  color: var(--error-text);
+
+  font-size: 12px;
+}
+
+/* Empty state */
+.activity-tracker section:last-child > p {
+  padding: 28px;
+
+  border: 1px dashed var(--border);
+
+  background: rgba(255, 253, 249, 0.65);
+
+  color: var(--charcoal-soft);
+
+  text-align: center;
+
+  font-size: 13px;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .activity-tracker article {
+    padding: 20px;
+  }
+}
+/* =========================================
+   TEACHER / HOD VERIFICATION
+========================================= */
+
+.activity-tracker section {
+  margin-bottom: 35px;
+}
+
+/* Verification section heading */
+.activity-tracker section h2 {
+  color: var(--charcoal);
+
+  font-size: 22px;
+  font-weight: 800;
+
+  letter-spacing: -0.03em;
+}
+
+/* Pending activity list */
+.activity-tracker section > div {
+  display: grid;
+  gap: 18px;
+}
+
+/* Verification card */
+.activity-tracker section article {
+  position: relative;
+
+  padding: 26px;
+
+  background: var(--cream);
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  box-shadow:
+    0 7px 22px rgba(68, 48, 40, 0.06);
+}
+
+/* Activity title */
+.activity-tracker section article h3 {
+  margin: 0 0 18px;
+
+  color: var(--charcoal);
+
+  font-size: 18px;
+  font-weight: 800;
+
+  letter-spacing: -0.025em;
+}
+
+/* Details */
+.activity-tracker section article p {
+  margin: 7px 0;
+
+  color: var(--charcoal-soft);
+
+  font-size: 12px;
+
+  line-height: 1.65;
+}
+
+.activity-tracker section article p strong {
+  color: var(--charcoal);
+
+  font-weight: 700;
+}
+
+/* Proof link */
+.activity-tracker section article a {
+  color: var(--taupe-dark);
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.activity-tracker section article a:hover {
+  text-decoration: underline;
+}
+
+/* Verification buttons */
+.activity-tracker section article button {
+  margin-top: 18px;
+  margin-right: 10px;
+
+  padding: 11px 18px;
+
+  border: none;
+  border-radius: 3px;
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* Verify */
+.activity-tracker section article button:first-of-type {
+  background: var(--sage-dark);
+
+  color: #ffffff;
+}
+
+.activity-tracker section article button:first-of-type:hover {
+  transform: translateY(-1px);
+
+  opacity: 0.9;
+}
+
+/* Reject */
+.activity-tracker section article button:last-of-type {
+  background: #f8e1dd;
+
+  color: var(--error-text);
+}
+
+.activity-tracker section article button:last-of-type:hover {
+  transform: translateY(-1px);
+
+  opacity: 0.9;
+}
+
+/* Refresh button */
+.activity-tracker section > button {
+  margin-bottom: 20px;
+
+  padding: 10px 17px;
+
+  border: 1px solid var(--border);
+  border-radius: 3px;
+
+  background: var(--cream);
+
+  color: var(--charcoal);
+
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.activity-tracker section > button:hover {
+  background: var(--rose-light);
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .activity-tracker section article {
+    padding: 20px;
+  }
+
+  .activity-tracker section article button {
+    width: 100%;
+
+    margin-right: 0;
+  }
+}
+/* =========================================
+   PO VERIFIED ACTIVITIES
+========================================= */
+
+.activity-tracker form:has(input[value]) {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+
+  max-width: 780px;
+}
+
+.activity-tracker form:has(input[value]) > div {
+  flex: 1;
+}
+
+.activity-tracker form:has(input[value]) button {
+  flex-shrink: 0;
+
+  width: auto;
+
+  margin: 0;
+
+  min-width: 110px;
+}
+
+/* PO empty state */
+.activity-tracker section > p {
+  padding: 28px;
+
+  border: 1px dashed var(--border);
+  border-radius: 3px;
+
+  background: rgba(255, 253, 249, 0.7);
+
+  color: var(--charcoal-soft);
+
+  text-align: center;
+
+  font-size: 13px;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .activity-tracker form:has(input[value]) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .activity-tracker form:has(input[value]) button {
+    width: 100%;
+  }
+}
+/* =========================================
+   PROOF TYPE / PDF UPLOAD
+========================================= */
+
+.activity-tracker .proof-section {
+  grid-column: 1 / -1;
+}
+
+.activity-tracker .proof-type-options {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 12px;
+}
+
+.activity-tracker .proof-type-options label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+  color: var(--charcoal);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.activity-tracker .proof-type-options input[type="radio"] {
+  width: auto;
+  margin: 0;
+  accent-color: var(--taupe);
+}
+
+.activity-tracker .proof-section input[type="file"] {
+  padding: 10px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.activity-tracker .proof-section small {
+  display: block;
+  margin-top: 7px;
+  color: var(--charcoal-soft);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.activity-tracker .proof-section small + small {
+  margin-top: 3px;
+}
+
+@media (max-width: 650px) {
+  .activity-tracker .proof-type-options {
+    gap: 18px;
+  }
+}
